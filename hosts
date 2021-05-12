@@ -1,0 +1,41 @@
+all:
+  hosts:
+    mail.example.com:
+  children:
+    sa:
+      children:
+        test:
+          hosts:
+            rh-ar-test.lingotto.local:
+    comune-verona:
+      children:
+        prenotazioni:
+          hosts:
+            10.9.28.48:
+          vars:
+            ansible_python_interpreter: /usr/bin/python3
+    intesys:
+      children:
+        javadev:
+          hosts:
+            javadev.intesys.it
+          vars:
+            ansible_python_interpreter: /usr/bin/python3
+        nb-eoliosi:
+          hosts:
+            localhost
+          vars:
+            ansible_python_interpreter: /usr/bin/python3.7
+    webservers:
+      hosts:
+        foo.example.com:
+        bar.example.com:
+    dbservers:
+      hosts:
+        one.example.com:
+        two.example.com:
+        three.example.com:
+        jumper:
+          ansible_port: 5555
+          ansible_host: 192.0.2.50
+
