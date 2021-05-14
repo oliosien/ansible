@@ -1,11 +1,13 @@
-#https://docs.docker.com/engine/reference/builder/
-FROM python:3.7-alpine
-#WORKDIR /code
-#ENV FLASK_APP=app.py
-#ENV FLASK_RUN_HOST=0.0.0.0
-#RUN apk add --no-cache gcc musl-dev linux-headers
-#COPY requirements.txt requirements.txt
-#RUN pip install -r requirements.txt
+# https://docs.docker.com/engine/reference/builder/
+
+FROM centos:centos8
+ENV container docker
+RUN yum -y install python36
+#pazKWE7CENh9Y --> Intesys123
+#pazxOelvoqxz6 --> ansible
+RUN useradd -U -m -p pazxOelvoqxz6 ansible
+RUN yum -y install openssh-server
+RUN yum -y install openssh-clients
+#VOLUME [ “/sys/fs/cgroup” ]
+CMD ["/usr/sbin/init"]
 EXPOSE 22
-#COPY . .
-#CMD ["flask", "run"]
