@@ -14,11 +14,11 @@ Coomand line reference
 
 https://docs.docker.com/engine/reference/run/
 
-Dockerfile
+Dockerfile reference
 
 https://docs.docker.com/engine/reference/builder/
 
-Compose specification
+Compose specification reference
 
 https://docs.docker.com/compose/compose-file/
 
