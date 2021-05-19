@@ -34,3 +34,9 @@ Here we run container in background (`-d`) and give all capabilities to the cont
 `$docker run -it -p 127.0.0.1:22:22 --privileged --name=c8-systemd-ansible c8-systemd:latest`
 
 
+$docker-compose up -- start all cont.
+
+$docker-compose down -- stop all cont.
+
+Commands you use with run start in new containers with configuration defined by that of the service, including volumes, links, and other details
+$docker-compose run -d -p 22:22 ansible2 bash
