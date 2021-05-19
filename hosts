@@ -25,7 +25,7 @@ all:
           hosts:
             localhost
           vars:
-            ansible_python_interpreter: /usr/bin/python3.7
+            ansible_python_interpreter: /usr/bin/python3.6
     webservers:
       hosts:
         foo.example.com:

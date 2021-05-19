@@ -3,7 +3,7 @@
 - name: My 1st Play
   # hosts: javadev
   hosts: localhost
-  remote_user: eoliosi
+  remote_user: ansible
 
   tasks:
   # - name: List file
@@ -21,6 +21,6 @@
 
   - name: Touch the same file
     file:
-      path: /home/eoliosi/prova.txt
+      path: /home/ansible/prova.txt
       state: touch
       mode: u+rw,g-wx,o-rwx
