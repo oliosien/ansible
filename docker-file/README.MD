@@ -10,33 +10,35 @@ Create a docker image with:
 
 ## Docker reference
 
-Coomand line reference
+Coomand line reference:
 
 https://docs.docker.com/engine/reference/run/
 
-Dockerfile reference
+Dockerfile reference:
 
 https://docs.docker.com/engine/reference/builder/
 
-Compose specification reference
+Compose specification reference:
 
 https://docs.docker.com/compose/compose-file/
 
-## Some usefull commands
+## Some usefull commands with docker
 
 To create an image called `c8-systemd` tagged by `latest` deleting all intermediate containers (`--rm`) starting from a Dockerfile (located in current path `.`):
 
-`$docker build --rm -t c8-systemd:latest .`
+`$ docker build --rm -t c8-systemd:latest .`
 
 To create a container named `c8-systemd-ansible` from `c8-systemd` image and `latest` tag, with a pesudo-tty (`-t`) and in intercative mode (`-i`). We bind port 8080 of the container to TCP port 80 on 127.0.0.1 (for `tcp` protocol):
 Here we run container in background (`-d`) and give all capabilities to the container (`--privileged`):
 
-`$docker run -it -p 127.0.0.1:22:22 --privileged --name=c8-systemd-ansible c8-systemd:latest`
+`$ docker run -it -p 127.0.0.1:22:22 --privileged --name=c8-systemd-ansible c8-systemd:latest`
 
+## Some usefull commands with docker-compose
 
-$docker-compose up -- start all cont.
+You can use compose if you want to manage more than one containers. In your `docker-compose.yml` define and configure a list of containers and start them using `up` command:
 
-$docker-compose down -- stop all cont.
+`$ docker-compose up`
 
-Commands you use with run start in new containers with configuration defined by that of the service, including volumes, links, and other details
-$docker-compose run -d -p 22:22 ansible2 bash
+If you stop and remove containers specified into `docker-compose.yml` file you can use:
+
+`$ docker-compose down`
