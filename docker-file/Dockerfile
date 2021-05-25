@@ -8,6 +8,13 @@ RUN yum -y install python36
 RUN useradd -U -m -p pazxOelvoqxz6 ansible
 RUN yum -y install openssh-server
 RUN yum -y install openssh-clients
+RUN yum -y install httpd
+RUN yum -y install telnet
+RUN yum -y install sudo
+RUN yum -y install python3-lxml
+RUN usermod -aG wheel ansible
 #VOLUME [ “/sys/fs/cgroup” ]
 CMD ["/usr/sbin/init"]
+#CMD service httpd start
 EXPOSE 22
+EXPOSE 80

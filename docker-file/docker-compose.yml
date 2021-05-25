@@ -5,22 +5,11 @@ services:
       context: .
       #dockerfile: Dockerfile
     #image: c8-systemd:latest
-    #ports:
-      #IPADDR:HOSTPORT:CONTAINERPORT
-    #  - 22:22
-    privileged: true
-    tty: true
-
-  ansible2:
-    build: 
-      context: .
-      #dockerfile: Dockerfile
-    #image: c8-systemd:latest
     ports:
       #IPADDR:HOSTPORT:CONTAINERPORT
-      - 22:22
+      - "22:22"
+      - "9000:80"
     privileged: true
     tty: true
-
     #container_name: c8-systemd-ansible
     
