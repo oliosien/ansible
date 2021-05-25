@@ -1,8 +1,7 @@
 ---
 
 - name: My 1st Play
-  # hosts: javadev
-  hosts: localhost
+  hosts: nb-eoliosi
   remote_user: ansible
 
   tasks:

@@ -13,8 +13,6 @@ RUN yum -y install telnet
 RUN yum -y install sudo
 RUN yum -y install python3-lxml
 RUN usermod -aG wheel ansible
-#VOLUME [ “/sys/fs/cgroup” ]
 CMD ["/usr/sbin/init"]
 #CMD service httpd start
-EXPOSE 22
-EXPOSE 80
+EXPOSE 22 80 8080 9090
